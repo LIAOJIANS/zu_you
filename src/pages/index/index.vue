@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<view @click="aaa">首页</view>
+		<!-- <view @click="aaa">首页</view> -->
 	</view>
 </template>
 
