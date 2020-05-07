@@ -1,16 +1,106 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "uni-app"
+	"pages": [{
+		"path": "pages/index/index",
+		"style": {
+			"app-plus": {
+				"scrollIndicator": "none", // 去除滚动条
+				"navigationBarTitleText": "首页",
+				"titleNView": { // 头部配置
+					"searchInput": { // 搜索框
+						"align": "center",
+						"backgroundColor": "#F7F7F7",
+						"borderRadius": "4px",
+						"placeholder": "搜索友组",
+						"placeholderColor": "#ccc",
+						"disabled": true // 另开一页
+					},
+					"buttons": [{
+						"float": "right",
+						"color": "#000",
+						"colorPressed": "#bbb",
+						"fontSize": "22px",
+						"fontSrc": "static/icon/icon.ttf",
+						"text": "\ue622"
+					}]
+				}
 			}
 		}
-	],
+	}, {
+		"path": "pages/personal/personal",
+		"style": {
+			"navigationBarTitleText": "我的",
+			"navigationBarBackgroundColor": "#4086ef",
+			"navigationBarTextStyle": "#fff",
+			"app-plus": {
+				"titleNView": {
+					"buttons": [{
+						"type": "menu"
+					}]
+				}
+			}
+		}
+	}, {
+		"path": "pages/chat/chat",
+		"style": {}
+	}, {
+		"path": "pages/find-rent-friend/find-rent-friend",
+		"style": {}
+	}, {
+		"path": "pages/login/login",
+		"style": {
+			"app-plus": {
+				"titleNView": false,
+				"bounce": "none"
+			}
+		}
+	}, {
+		"path": "pages/setting/setting",
+		"style": {
+			"navigationBarTitleText": "设置"
+		}
+	}, {
+		"path": "pages/broken-net/broken-net",
+		"style": {
+			"navigationBarTitleText": "网络崩溃......"
+		}
+	}],
+
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
+		"navigationBarTitleText": "租友",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+
+	"tabBar": {
+		"color": "#ADADAD",
+		"selectedColor": "#57B9F9",
+		"backgroundColor": "#FFFFFF",
+		"borderStyle": "black",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text": "租友",
+				"iconPath": "/static/footer/index.png",
+				"selectedIconPath": "/static/footer/index-select.png"
+			},
+			{
+				"pagePath": "pages/find-rent-friend/find-rent-friend",
+				"text": "分类租友",
+				"iconPath": "/static/footer/rent.png",
+				"selectedIconPath": "/static/footer/rent-select.png"
+			},
+			{
+				"pagePath": "pages/chat/chat",
+				"text": "小纸条",
+				"iconPath": "/static/footer/chat.png",
+				"selectedIconPath": "/static/footer/chat-select.png"
+			},
+			{
+				"pagePath": "pages/personal/personal",
+				"text": "我的",
+				"iconPath": "/static/footer/my.png",
+				"selectedIconPath": "/static/footer/my-select.png"
+			}
+		]
 	}
 }

@@ -1,0 +1,34 @@
+.display-space-between-center { // 左右布局并且垂直居中
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.display-space-between { // 左右并在一行
+  display: flex;
+  justify-content: space-between;
+}
+
+.display-center { // 并在一行并且垂直居中
+  display: flex;
+  align-items: center;
+}
+
+.display-space-around { // 并在一行，水平居中
+  display: flex;
+  justify-content: space-around;
+}
+
+.display { // 并在一行
+  display: flex;
+}
+
+.display-a-j-c {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.u-f1{
+	flex: 1;
+}
