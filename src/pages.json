@@ -61,11 +61,7 @@
 	}, {
 		"path": "pages/broken-net/broken-net",
 		"style": {
-			"navigationBarTitleText": "网络崩溃......",
-			"app-plus": {
-				"titleNView": false,
-				"bounce": "none"
-			}
+			"navigationBarTitleText": "网络崩溃......"
 		}
 	}],
 

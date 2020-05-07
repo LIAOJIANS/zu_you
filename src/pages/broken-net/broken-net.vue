@@ -1,22 +1,25 @@
 <template>
-	<view>网络崩溃啦
-		<button type="default" @click="goBakc">点我返回</button>
+	<view class="broken" >
+		<image src="../../static/common/broken.png" mode="widthFix"></image>
+		<view class="title">Oops,网络扑街了</view>
+		<button class="shuax u-f1" @click="goBakc">点击刷新</button>
 	</view>
 </template>
 
 <script>
 export default {
 	data() {
-		return {};
+		return {
+			broken: false
+		};
 	},
 	methods: {
-		goBakc() {
-			this.lib.NetWork.On(data => {
-				console.log(data)
+		async goBakc() {
+			await this.lib.NetWork.On(data => {
 				if(data) {
-					uni.showToast({
-						title: '请链接网络'
-					})
+					uni.navigateTo({
+						url: '/pages/broken-net/broken-net'
+					});
 				} else {
 					uni.navigateBack({
 						data: 1
@@ -28,4 +31,27 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+	.broken {
+		text-align: center;
+		image {
+			margin-top: 200upx;
+			width: 400upx;
+		}
+		.title {
+			color: #7e7e7e;
+			font-size: 36upx;
+			font-weight: bold;
+		}
+		.shuax {
+			margin-top: 40upx;
+			width: 200upx;
+			border: 2upx solid #7e7e7e;
+			color: #7e7e7e;
+			border-radius: 10upx;
+			font-size: 32upx;
+			line-height: 70upx;	
+			font-weight: bold;
+		}
+	}
+</style>

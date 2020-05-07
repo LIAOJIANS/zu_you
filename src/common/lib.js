@@ -9,10 +9,10 @@ const NetWork = {
 		uni.getNetworkType({
 			success: (res) => {
 				if(res.networkType!=='none'){ this.isConnect=true; return;}
-				uni.navigateTo({
-					url: '/pages/broken-net/broken-net'
-				})
 				cb && cb(true)
+				// uni.navigateTo({
+				// 	url: '/pages/broken-net/broken-net'
+				// })
 				uni.showToast({
 					icon:"none",
 					title: '请先连接网络',
@@ -24,9 +24,9 @@ const NetWork = {
 			this.isConnect = res.isConnected;
 			if(!res.isConnected){
 				cb && cb(!res.isConnected)
-				uni.navigateTo({
-					url: '/pages/broken-net/broken-net'
-				});
+				// uni.navigateTo({
+				// 	url: '/pages/broken-net/broken-net'
+				// });
 				uni.showToast({
 					icon:"none",
 					title: '您目前处于断网状态',
